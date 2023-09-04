@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>An Introduction to ANOVA Analysis</title>
+  <title>Performing ANOVA Analysis with Python</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -26,60 +26,67 @@
       border-radius: 5px;
     }
     h2 {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
+    }
+    code {
+      background-color: #f7f7f7;
+      padding: 0.2rem;
+      border: 1px solid #ddd;
+      font-family: "Courier New", monospace;
+      font-size: 0.9rem;
     }
     ul {
-      margin-left: 2rem;
+      margin-top: 0.5rem;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>An Introduction to ANOVA Analysis</h1>
-    <p>Presented by aplotlib</p>
+    <h1>Performing ANOVA Analysis with Python</h1>
+    <p>Step-by-step guide</p>
   </header>
   <div class="container">
-    <h2>Step 1: Data Preparation</h2>
-    <p>Let's start by preparing the data for our ANOVA analysis.</p>
-    <pre><code>
-      # Python code for data cleaning
+    <h2>Step 1: Install Required Libraries</h2>
+    <p>Open a terminal or command prompt and install the required Python libraries:</p>
+    <code>
+      pip install pandas scipy
+    </code>
+
+    <h2>Step 2: Open VSCode and Jupyter Notebook</h2>
+    <p>Open Visual Studio Code (VSCode) and create or open a Jupyter Notebook.</p>
+
+    <h2>Step 3: Import Libraries</h2>
+    <p>In the Jupyter Notebook cell, import the necessary libraries:</p>
+    <code>
       import pandas as pd
+      from scipy.stats import f_oneway
+    </code>
 
-      # Load the raw dataset
-      df = pd.read_excel('ca-lab-results-2023-05-30.xlsx')
+    <h2>Step 4: Load Data from CSV</h2>
+    <p>Load data from the CSV file using pandas:</p>
+    <code>
+      data = pd.read_csv('your_data_file.csv')
+    </code>
 
-      # Filter to keep only relevant columns
-      filtered_df = df[['producer', 'product_type', 'total_thc']]
+    <h2>Step 5: Perform ANOVA Analysis</h2>
+    <p>Perform ANOVA analysis on the data:</p>
+    <code>
+      categories = data['category'].unique()
+      category_data = [data[data['category'] == cat]['value'] for cat in categories]
 
-      # Drop rows with missing values in these columns
-      cleaned_df = filtered_df.dropna(subset=['producer', 'product_type', 'total_thc'])
+      # Perform ANOVA
+      anova_result = f_oneway(*category_data)
+    </code>
 
-      # Save the cleaned data for further analysis
-      cleaned_df.to_excel('cleaned_ca_lab_results.xlsx', index=False)
-    </code></pre>
-
-    <h2>Step 2: ANOVA Analysis</h2>
-    <p>Now, let's perform the ANOVA analysis on our cleaned data.</p>
-    <pre><code>
-      # Python code for ANOVA
-      import scipy.stats as stats
-
-      # Load the cleaned data
-      cleaned_df = pd.read_excel('cleaned_ca_lab_results.xlsx')
-
-      # ANOVA by Producer
-      anova_producer = stats.f_oneway(*(cleaned_df['total_thc'][cleaned_df['producer'] == producer] for producer in cleaned_df['producer'].unique()))
-
-      # ANOVA by Product Type
-      anova_product_type = stats.f_oneway(*(cleaned_df['total_thc'][cleaned_df['product_type'] == product_type] for product_type in cleaned_df['product_type'].unique()))
-    </code></pre>
-
-    <h2>Step 3: Interpretation</h2>
-    <p>Let's interpret the results of our ANOVA analysis.</p>
-    <ul>
-      <li><strong>By Producer:</strong> The p-value was 0.082, greater than the 0.05 threshold, indicating no significant difference in THC levels across producers.</li>
-      <li><strong>By Product Type:</strong> The p-value was extremely close to zero (1.96 x 10<sup>-15</sup>), indicating a significant difference in THC levels across product types.</li>
-    </ul>
+    <h2>Step 6: Interpret Results</h2>
+    <p>Print and interpret the results of the ANOVA analysis:</p>
+    <code>
+      print("ANOVA p-value:", anova_result.pvalue)
+      if anova_result.pvalue < 0.05:
+          print("There is a significant difference between groups.")
+      else:
+          print("There is no significant difference between groups.")
+    </code>
   </div>
 </body>
 </html>
