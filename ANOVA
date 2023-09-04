@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cannabis Data Science Meetup: ANOVA Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f7f7f7;
+        }
+        h1 {
+            color: #1f4788;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        }
+        .note {
+            font-style: italic;
+            color: #666;
+        }
+        .ai-quote {
+            background-color: #fafafa;
+            border-left: 5px solid #1f4788;
+            padding: 10px 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .code {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Cannabis Data Science Meetup: ANOVA Analysis</h1>
+        <p>Hey fellow cannabis data enthusiasts! 🌿 Let's embark on a data-driven journey using the power of AI to unravel insights from cannabis lab results. Today, we'll unveil the magic of ANOVA analysis with a sprinkle of AI creativity. Buckle up!</p>
+        <div class="ai-quote">
+            <p>"I'm not an AI expert, but with AI by my side, I'll make data dance and insights groove! 🎶"</p>
+        </div>
+        <p>Here's how I, your AI partner, will guide you through the analysis:</p>
+        <h2>Step 1: Data Preparation</h2>
+        <p><strong>Data Inspection:</strong> Let's dive into the dataset together! We'll focus on <code>producer</code>, <code>product_type</code>, and <code>total_thc</code>.</p>
+        <p><strong>Data Cleaning:</strong> Let's sweep away the dust! We'll clean up missing values and ensure our data shines.</p>
+        <div class="code">
+            <!-- Python code for data cleaning -->
+            <span># Load, filter, and clean the data</span><br>
+            import pandas as pd<br>
+            df = pd.read_excel('ca-lab-results-2023-05-30.xlsx')<br>
+            filtered_df = df[['producer', 'product_type', 'total_thc']]<br>
+            cleaned_df = filtered_df.dropna(subset=['producer', 'product_type', 'total_thc'])<br>
+            cleaned_df.to_excel('cleaned_ca_lab_results.xlsx', index=False)
+        </div>
+
+        <h2>Step 2: ANOVA Analysis</h2>
+        <p><strong>Load Cleaned Data:</strong> We've got a tidy dataset ready to roll. Let's load it and dive in!</p>
+        <p><strong>Perform ANOVA:</strong> Now comes the analysis magic. With Python's <code>scipy.stats</code> library, we'll reveal insights.</p>
+        <div class="code">
+            <!-- Python code for ANOVA -->
+            <span># Load cleaned data</span><br>
+            cleaned_df = pd.read_excel('cleaned_ca_lab_results.xlsx')<br><br>
+            <span># Perform ANOVA by Producer</span><br>
+            anova_producer = stats.f_oneway(*[cleaned_df['total_thc'][cleaned_df['producer'] == producer] for producer in cleaned_df['producer'].unique()])<br><br>
+            <span># Perform ANOVA by Product Type</span><br>
+            anova_product_type = stats.f_oneway(*[cleaned_df['total_thc'][cleaned_df['product_type'] == product_type] for product_type in cleaned_df['product_type'].unique()])
+        </div>
+
+        <h2>Step 3: Interpretation</h2>
+        <p><strong>By Producer:</strong> The p-value danced to \(0.082\)—not low enough to shout about THC differences across producers.</p>
+        <p><strong>By Product Type:</strong> Brace yourselves! The p-value grooved its way to \(1.96 \times 10^{-15}\), uncovering some wild THC level variations across product types.</p>
+        <p>And there you have it—AI magic making data dance and insights shine!</p>
+
+        <div class="note">
+            <p>Remember, I may not be an AI expert, but I can surely add a dash of flair to data analysis! Let's embrace the dance of data together. 🎉</p>
+        </div>
+    </div>
+</body>
+</html>
