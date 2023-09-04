@@ -3,70 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Performing ANOVA Analysis for Cannabis and Economic Data</title>
+  <title>Unlock Insights with ANOVA Analysis using Python and ChatGPT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #2c3e50;
+      color: #ecf0f1;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2980b9;
+      text-align: center;
+      padding: 1rem;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #34495e;
+      border-radius: 5px;
+    }
+    code {
+      background-color: #273746;
+      padding: 0.2rem;
+      border: 1px solid #2c3e50;
+      font-family: "Courier New", monospace;
+      font-size: 0.9rem;
+    }
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Performing ANOVA Analysis for Cannabis and Economic Data</h1>
-    <p>A Step-by-Step Guide for Data Science Experts</p>
+    <img class="logo" src="python_logo.png" alt="Python Logo">
+    <img class="logo" src="chatgpt_logo.png" alt="ChatGPT Logo">
+    <h1>Unlock Insights with ANOVA Analysis using Python and ChatGPT</h1>
+    <p>A Colorful Journey for Cannabis and Economic Data Enthusiasts</p>
   </header>
   <div class="container">
-    <h2>Step 1: Install Required Libraries</h2>
-    <p>Begin by installing essential Python libraries:</p>
+    <h2>Step 1: Embrace Python's Power</h2>
+    <p>Python libraries pandas and scipy await your command:</p>
     <code>
       pip install pandas scipy
     </code>
-    <p>These libraries empower data manipulation and statistical analysis.</p>
+    <p>Equip yourself with the tools of data magic.</p>
 
-    <h2>Step 2: Open VSCode and Jupyter Notebook</h2>
-    <p>Launch Visual Studio Code (VSCode) and create or access a Jupyter Notebook.</p>
+    <h2>Step 2: Enter the VSCode Arena</h2>
+    <p>Launch Visual Studio Code (VSCode) for your grand analysis.</p>
 
-    <h2>Step 3: Import Required Libraries</h2>
-    <p>In a Jupyter Notebook cell, import key libraries:</p>
+    <h2>Step 3: Embrace the Python Legends</h2>
+    <p>Summon pandas and f_oneway with a magical import:</p>
     <code>
       import pandas as pd
       from scipy.stats import f_oneway
     </code>
-    <p>Pandas for data management and f_oneway for ANOVA computation.</p>
+    <p>The magic staffs of data manipulation and ANOVA.</p>
 
-    <h2>Step 4: Load Data from CSV</h2>
-    <p>Load data from a CSV file using pandas:</p>
+    <h2>Step 4: Retrieve Data with Elegance</h2>
+    <p>Retrieve your cannabis and economic data with pandas:</p>
     <code>
       data = pd.read_csv('your_data_file.csv')
     </code>
-    <p>Access your cannabis and economic data with ease.</p>
+    <p>Your data at your fingertips, ready for analysis.</p>
 
-    <h2>Step 5: Perform ANOVA Analysis</h2>
-    <p>Conduct ANOVA analysis on the data:</p>
+    <h2>Step 5: ANOVA Analysis Unveiled</h2>
+    <p>Perform ANOVA on the data, unraveling insights:</p>
     <code>
       categories = data['category'].unique()
       category_data = [data[data['category'] == cat]['value'] for cat in categories]
 
-      # Perform ANOVA
+      # The ANOVA spell
       anova_result = f_oneway(*category_data)
     </code>
-    <p>Gain insights into group differences using ANOVA.</p>
+    <p>Peek into group secrets through the ANOVA crystal.</p>
 
-    <h2>Step 6: Interpret Results</h2>
-    <p>Print and interpret ANOVA analysis results:</p>
+    <h2>Step 6: Decode the Mystical Insights</h2>
+    <p>Print and decode the results of the ANOVA quest:</p>
     <code>
       print("ANOVA p-value:", anova_result.pvalue)
       if anova_result.pvalue < 0.05:
-          print("Significant difference between groups.")
+          print("Ancient knowledge: Significant difference between groups.")
       else:
-          print("No significant difference between groups.")
+          print("The cosmos declares: No significant difference between groups.")
     </code>
-    <p>Decipher p-values to assess group distinctions.</p>
+    <p>The cosmic scrolls of p-values hold the truth.</p>
 
-    <h2>Step 7: Run the Cell</h2>
-    <p>Execute the cell to perform ANOVA analysis.</p>
+    <h2>Step 7: Unleash the Magic</h2>
+    <p>Unleash the power by casting the cell spell.</p>
 
-    <h2>Step 8: View Results</h2>
-    <p>Observe ANOVA results in the cell output.</p>
+    <h2>Step 8: Gaze upon the Starry Output</h2>
+    <p>Gaze upon the stardust of ANOVA revelations in the cell.</p>
 
-    <h2>Step 9: Customize Analysis</h2>
-    <p>Adapt the analysis to your cannabis and economic datasets.</p>
+    <h2>Step 9: Shape the Magic to Your Needs</h2>
+    <p>Weave your data spells, customize the analysis to your realms.</p>
   </div>
 </body>
 </html>
