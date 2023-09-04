@@ -30,32 +30,35 @@
       border: 1px solid #2c3e50;
       font-family: "Courier New", monospace;
       font-size: 0.9rem;
-<body>
-  <header>
-    <img class="logo" src="python.jpg" alt="Python Logo">
-    <img class="logo" src="ChatGPT_logo.svg" alt="ChatGPT Logo">
-    <h1>Unlock Insights with ANOVA Analysis</h1>
-    <p>A Journey for Cannabis and Economic Data Enthusiasts</p>
-  </header>
-  <div class="container">
+    }
+    .logo {
+      width: 30px;
+      height: 30px;
+      margin-right: 5px;
+    }
   </style>
 </head>
 <body>
   <header>
+    <img class="logo" src="python_logo.png" alt="Python Logo">
+    <img class="logo" src="chatgpt_logo.png" alt="ChatGPT Logo">
     <h1>Unlock Insights with ANOVA Analysis</h1>
+    <p>A Journey for Cannabis and Data Enthusiasts</p>
     <p>By: Alex Popoff</p>
-    <p>A Journey into ChatGPT and Python Libraries for ANOVAs</p>
   </header>
   <div class="container">
+    <h2>Introduction: Unlock Insights with ANOVA Analysis</h2>
+    <p>Welcome to a journey of data exploration, where Python and the power of ANOVA guide us through uncovering hidden insights within cannabis data sets. ANOVA, or Analysis of Variance, is a statistical technique that helps us discover differences between groups. In our quest, we will leverage Python's enchanting spells, pandas and scipy, to bring data to life.</p>
+
     <h2>Step 1: Embrace Python's Power</h2>
-    <p>Python is your wand, pandas and scipy your spells:</p>
+    <p>Equip yourself with the tools of data magic. Open your terminal or command prompt and invoke the spells:</p>
     <code>
       pip install pandas scipy
     </code>
-    <p>Equip yourself with the tools of data magic.</p>
+    <p>Python is your wand; pandas and scipy are your enchanting spells.</p>
 
     <h2>Step 2: Enter the VSCode Arena</h2>
-    <p>Visual Studio Code (VSCode) is your canvas.</p>
+    <p>Visual Studio Code (VSCode) is your canvas where data stories unfold. Open your VSCode and create a new Jupyter Notebook.</p>
 
     <h2>Step 3: Embrace the Python Legends</h2>
     <p>Summon pandas and f_oneway with a magical import:</p>
@@ -63,43 +66,54 @@
       import pandas as pd
       from scipy.stats import f_oneway
     </code>
-    <p>The magic staffs of data manipulation and ANOVA.</p>
+    <p>The magic staffs of data manipulation and ANOVA await your command.</p>
 
     <h2>Step 4: Retrieve Data with Elegance</h2>
-    <p>Retrieve your data with pandas:</p>
+    <p>Retrieve your precious data with the grace of pandas:</p>
     <code>
       data = pd.read_csv('your_data_file.csv')
     </code>
     <p>Your data at your fingertips, ready for analysis.</p>
 
     <h2>Step 5: ANOVA Analysis Unveiled</h2>
-    <p>Perform ANOVA on the data, unraveling insights:</p>
+    <p>Perform Analysis of Variance (ANOVA) to unveil the hidden:</p>
     <code>
       categories = data['category'].unique()
       category_data = [data[data['category'] == cat]['value'] for cat in categories]
+
+      <span class="python-comment"># The ANOVA spell</span>
       anova_result = f_oneway(*category_data)
     </code>
     <p>Peek into group secrets through the ANOVA crystal.</p>
+    <p>ANOVA is a statistical technique that assesses whether the means of different groups are statistically different from each other. In our cannabis exploration, ANOVA helps us determine if different strains or dosages lead to distinct effects.</p>
 
     <h2>Step 6: Decode the Mystical Insights</h2>
     <p>Print and decode the results of the ANOVA quest:</p>
     <code>
       print("ANOVA p-value:", anova_result.pvalue)
       if anova_result.pvalue < 0.05:
-          print("Unlocking wisdom: Significant difference between groups.")
+          print("Ancient knowledge: Significant difference between groups.")
       else:
-          print("The cosmos speaks: No significant difference between groups.")
+          print("The cosmos declares: No significant difference between groups.")
     </code>
-    <p>The cosmic scrolls of p-values reveal the truth.</p>
-
+    <p>The cosmic scrolls of p-values hold the truth.</p>
     <h2>Step 7: Unleash the Magic</h2>
-    <p>Unleash the power by casting the cell spell.</p>
+    <p>Unleash the power by casting the cell spell. Execute your code and watch the ANOVA magic unfold in your Jupyter Notebook. The spell of ANOVA reveals whether there's a significant difference in means between groups.</p>
 
     <h2>Step 8: Gaze upon the Starry Output</h2>
-    <p>Gaze upon the stardust of ANOVA revelations in the cell.</p>
+    <p>Gaze upon the stardust of ANOVA revelations in the cell. The universe of insights is at your fingertips. Among the cosmic findings, the p-value emerges like a celestial guide.</p>
 
     <h2>Step 9: Shape the Magic to Your Needs</h2>
-    <p>Weave your data spells, customize the analysis to your realms.</p>
+    <p>Weave your data spells, customize the analysis to your realms. Experiment with different data sets, variables, and hypotheses to uncover new dimensions of understanding. The p-value, your ally, can shift the balance of truth.</p>
+
+    <h2>Understanding P-Values and Null Hypothesis</h2>
+    <p>At the heart of ANOVA lies the p-value, a powerful artifact. It's a measure of evidence against a null hypothesis. The null hypothesis assumes that there's no significant difference between groups. A small p-value (< 0.05) indicates strong evidence against the null hypothesis. In the realm of data science, a low p-value beckons you to explore further, suggesting that your findings are not mere coincidences.</p>
+
+    <h2>Why Should You Care?</h2>
+    <p>As a researcher in the world of cannabis data, caring for p-values and null hypotheses is vital. The significance of p-values guides your exploration, revealing whether observed differences are meaningful or random. Rejecting the null hypothesis can lead to groundbreaking insights in the cannabis domain, aiding your pursuit of truth, safety, and scientific understanding.</p>
+
+    <h2>Conclusion: Embrace the Insights</h2>
+    <p>Your journey through ANOVA analysis has uncovered hidden truths within cannabis data sets. Python's magic and ANOVA's power have transformed data into insights. As you explore further, remember that ANOVA is a key tool in your data science arsenal, guiding you to unlock the secrets hidden in your data.</p>
   </div>
 </body>
 </html>
