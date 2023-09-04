@@ -5,33 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>An Introduction to ANOVA Analysis</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-    }
-    code {
-      background-color: #f7f7f7;
-      padding: 0.2rem;
-      border: 1px solid #ddd;
-      font-family: "Courier New", monospace;
-      font-size: 0.9rem;
-    }
+    /* Styles for header and container */
+    /* ... (same as provided) ... */
   </style>
 </head>
 <body>
@@ -42,38 +17,38 @@
   <div class="container">
     <h2>Step 1: Data Preparation</h2>
     <p>Let's start by preparing the data for our ANOVA analysis.</p>
-    <code>
-      # Python code for data cleaning
-      import pandas as pd
+    <pre><code>
+# Python code for data cleaning
+import pandas as pd
 
-      # Load the raw dataset
-      df = pd.read_excel('ca-lab-results-2023-05-30.xlsx')
+# Load the raw dataset
+df = pd.read_excel('ca-lab-results-2023-05-30.xlsx')
 
-      # Filter to keep only relevant columns
-      filtered_df = df[['producer', 'product_type', 'total_thc']]
+# Filter to keep only relevant columns
+filtered_df = df[['producer', 'product_type', 'total_thc']]
 
-      # Drop rows with missing values in these columns
-      cleaned_df = filtered_df.dropna(subset=['producer', 'product_type', 'total_thc'])
+# Drop rows with missing values in these columns
+cleaned_df = filtered_df.dropna(subset=['producer', 'product_type', 'total_thc'])
 
-      # Save the cleaned data for further analysis
-      cleaned_df.to_excel('cleaned_ca_lab_results.xlsx', index=False)
-    </code>
+# Save the cleaned data for further analysis
+cleaned_df.to_excel('cleaned_ca_lab_results.xlsx', index=False)
+    </code></pre>
 
     <h2>Step 2: ANOVA Analysis</h2>
     <p>Now, let's perform the ANOVA analysis on our cleaned data.</p>
-    <code>
-      # Python code for ANOVA
-      import scipy.stats as stats
+    <pre><code>
+# Python code for ANOVA
+import scipy.stats as stats
 
-      # Load the cleaned data
-      cleaned_df = pd.read_excel('cleaned_ca_lab_results.xlsx')
+# Load the cleaned data
+cleaned_df = pd.read_excel('cleaned_ca_lab_results.xlsx')
 
-      # ANOVA by Producer
-      anova_producer = stats.f_oneway(*(cleaned_df['total_thc'][cleaned_df['producer'] == producer] for producer in cleaned_df['producer'].unique()))
+# ANOVA by Producer
+anova_producer = stats.f_oneway(*(cleaned_df['total_thc'][cleaned_df['producer'] == producer] for producer in cleaned_df['producer'].unique()))
 
-      # ANOVA by Product Type
-      anova_product_type = stats.f_oneway(*(cleaned_df['total_thc'][cleaned_df['product_type'] == product_type] for product_type in cleaned_df['product_type'].unique()))
-    </code>
+# ANOVA by Product Type
+anova_product_type = stats.f_oneway(*(cleaned_df['total_thc'][cleaned_df['product_type'] == product_type] for product_type in cleaned_df['product_type'].unique()))
+    </code></pre>
 
     <h2>Step 3: Interpretation</h2>
     <p>Let's interpret the results of our ANOVA analysis.</p>
