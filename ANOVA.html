@@ -40,10 +40,9 @@
 </head>
 <body>
   <header>
-    <img class="logo" src="python.jpg" alt="Python Logo">
-    <img class="logo" src="ChatGPT_logo.png" alt="ChatGPT Logo">
     <h1>Unlock Insights with ANOVA Analysis</h1>
-    <p>A Journey for Cannabis and Economic Data Enthusiasts</p>
+    <p>By: Alex Popoff</p>
+    <p>A Journey into ChatGPT and Python Libraries for ANOVAs</p>
   </header>
   <div class="container">
     <h2>Step 1: Embrace Python's Power</h2>
@@ -65,7 +64,7 @@
     <p>The magic staffs of data manipulation and ANOVA.</p>
 
     <h2>Step 4: Retrieve Data with Elegance</h2>
-    <p>Retrieve your cannabis and economic data with pandas:</p>
+    <p>Retrieve your data with pandas:</p>
     <code>
       data = pd.read_csv('your_data_file.csv')
     </code>
@@ -76,8 +75,6 @@
     <code>
       categories = data['category'].unique()
       category_data = [data[data['category'] == cat]['value'] for cat in categories]
-
-      <!-- The ANOVA spell -->
       anova_result = f_oneway(*category_data)
     </code>
     <p>Peek into group secrets through the ANOVA crystal.</p>
@@ -87,11 +84,11 @@
     <code>
       print("ANOVA p-value:", anova_result.pvalue)
       if anova_result.pvalue < 0.05:
-          print("Ancient knowledge: Significant difference between groups.")
+          print("Unlocking wisdom: Significant difference between groups.")
       else:
-          print("The cosmos declares: No significant difference between groups.")
+          print("The cosmos speaks: No significant difference between groups.")
     </code>
-    <p>The cosmic scrolls of p-values hold the truth.</p>
+    <p>The cosmic scrolls of p-values reveal the truth.</p>
 
     <h2>Step 7: Unleash the Magic</h2>
     <p>Unleash the power by casting the cell spell.</p>
@@ -104,4 +101,3 @@
   </div>
 </body>
 </html>
-
