@@ -3,73 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Performing ANOVA Analysis with Python</title>
+  <title>Performing ANOVA Analysis for Cannabis and Economic Data</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #007bff;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-    }
-    .container {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: white;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 5px;
-    }
-    h2 {
-      margin-top: 1.5rem;
-    }
-    code {
-      background-color: #f7f7f7;
-      padding: 0.2rem;
-      border: 1px solid #ddd;
-      font-family: "Courier New", monospace;
-      font-size: 0.9rem;
-    }
-    ul {
-      margin-top: 0.5rem;
-    }
+    /* Your CSS styles here */
   </style>
 </head>
 <body>
   <header>
-    <h1>Performing ANOVA Analysis with Python</h1>
-    <p>Step-by-step guide</p>
+    <h1>Performing ANOVA Analysis for Cannabis and Economic Data</h1>
+    <p>A Step-by-Step Guide for Data Science Experts</p>
   </header>
   <div class="container">
     <h2>Step 1: Install Required Libraries</h2>
-    <p>Open a terminal or command prompt and install the required Python libraries:</p>
+    <p>Begin by installing essential Python libraries:</p>
     <code>
       pip install pandas scipy
     </code>
+    <p>These libraries empower data manipulation and statistical analysis.</p>
 
     <h2>Step 2: Open VSCode and Jupyter Notebook</h2>
-    <p>Open Visual Studio Code (VSCode) and create or open a Jupyter Notebook.</p>
+    <p>Launch Visual Studio Code (VSCode) and create or access a Jupyter Notebook.</p>
 
-    <h2>Step 3: Import Libraries</h2>
-    <p>In the Jupyter Notebook cell, import the necessary libraries:</p>
+    <h2>Step 3: Import Required Libraries</h2>
+    <p>In a Jupyter Notebook cell, import key libraries:</p>
     <code>
       import pandas as pd
       from scipy.stats import f_oneway
     </code>
+    <p>Pandas for data management and f_oneway for ANOVA computation.</p>
 
     <h2>Step 4: Load Data from CSV</h2>
-    <p>Load data from the CSV file using pandas:</p>
+    <p>Load data from a CSV file using pandas:</p>
     <code>
       data = pd.read_csv('your_data_file.csv')
     </code>
+    <p>Access your cannabis and economic data with ease.</p>
 
     <h2>Step 5: Perform ANOVA Analysis</h2>
-    <p>Perform ANOVA analysis on the data:</p>
+    <p>Conduct ANOVA analysis on the data:</p>
     <code>
       categories = data['category'].unique()
       category_data = [data[data['category'] == cat]['value'] for cat in categories]
@@ -77,16 +48,28 @@
       # Perform ANOVA
       anova_result = f_oneway(*category_data)
     </code>
+    <p>Gain insights into group differences using ANOVA.</p>
 
     <h2>Step 6: Interpret Results</h2>
-    <p>Print and interpret the results of the ANOVA analysis:</p>
+    <p>Print and interpret ANOVA analysis results:</p>
     <code>
       print("ANOVA p-value:", anova_result.pvalue)
       if anova_result.pvalue < 0.05:
-          print("There is a significant difference between groups.")
+          print("Significant difference between groups.")
       else:
-          print("There is no significant difference between groups.")
+          print("No significant difference between groups.")
     </code>
+    <p>Decipher p-values to assess group distinctions.</p>
+
+    <h2>Step 7: Run the Cell</h2>
+    <p>Execute the cell to perform ANOVA analysis.</p>
+
+    <h2>Step 8: View Results</h2>
+    <p>Observe ANOVA results in the cell output.</p>
+
+    <h2>Step 9: Customize Analysis</h2>
+    <p>Adapt the analysis to your cannabis and economic datasets.</p>
   </div>
 </body>
 </html>
+
